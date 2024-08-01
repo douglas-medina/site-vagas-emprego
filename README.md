@@ -49,7 +49,7 @@ Desenvolver um sistema de gestão de vagas de trabalho utilizando o framework Dj
 
 ## Passos a Serem Seguidos
 
-- [ ] **Configuração do Ambiente**
+- [X] **Configuração do Ambiente**
   - Instalar Django e configurar o projeto inicial.
 
 - [ ] **Desenvolvimento do Backend**
