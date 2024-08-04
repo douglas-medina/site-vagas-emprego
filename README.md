@@ -52,6 +52,10 @@ Desenvolver um sistema de gestão de vagas de trabalho utilizando o framework Dj
 - [X] **Configuração do Ambiente**
   - Instalar Django e configurar o projeto inicial.
 
+- [ ] **Estruturação do Banco de Dados**
+  - Criar diagrama da estrutura do banco de dados.
+  - Basear no site vagas.com
+
 - [ ] **Desenvolvimento do Backend**
   - Criar o modelo de dados para as vagas.
   - Configurar o Django Admin para permitir a criação e gerenciamento das vagas.
