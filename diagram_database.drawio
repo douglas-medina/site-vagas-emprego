@@ -1,0 +1,46 @@
+<mxfile host="app.diagrams.net" agent="Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/127.0.0.0 Safari/537.36" version="24.7.6">
+  <diagram name="Página-1" id="DpaMdCS54HOKeHdCSwLn">
+    <mxGraphModel dx="782" dy="863" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="OMyhO2Jcg892DU5jWI1W-1" value="tbVagas" style="swimlane;whiteSpace=wrap;html=1;" parent="1" vertex="1">
+          <mxGeometry x="80" y="80" width="165" height="200" as="geometry" />
+        </mxCell>
+        <mxCell id="OMyhO2Jcg892DU5jWI1W-4" value="&lt;div style=&quot;&quot;&gt;&lt;ul&gt;&lt;li&gt;&lt;span style=&quot;background-color: initial;&quot;&gt;id&lt;/span&gt;&lt;/li&gt;&lt;li&gt;empresa_id int&lt;/li&gt;&lt;li&gt;cargo str&amp;nbsp;&lt;/li&gt;&lt;li&gt;descricao_vaga str&lt;/li&gt;&lt;li&gt;faixa_salarial int&lt;/li&gt;&lt;li&gt;regime int&lt;/li&gt;&lt;li&gt;escolatidade int&lt;/li&gt;&lt;li&gt;candidatos&lt;/li&gt;&lt;li&gt;data_cadastro&lt;br&gt;&lt;/li&gt;&lt;li&gt;status&lt;/li&gt;&lt;/ul&gt;&lt;/div&gt;" style="text;html=1;align=left;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" parent="OMyhO2Jcg892DU5jWI1W-1" vertex="1">
+          <mxGeometry x="5" y="10" width="160" height="180" as="geometry" />
+        </mxCell>
+        <mxCell id="OMyhO2Jcg892DU5jWI1W-5" value="tbEmpresas" style="swimlane;whiteSpace=wrap;html=1;" parent="1" vertex="1">
+          <mxGeometry x="280" y="80" width="160" height="200" as="geometry" />
+        </mxCell>
+        <mxCell id="OMyhO2Jcg892DU5jWI1W-6" value="&lt;div style=&quot;&quot;&gt;&lt;ul&gt;&lt;li&gt;id&lt;/li&gt;&lt;li&gt;nome_social&lt;/li&gt;&lt;li&gt;ramo&lt;/li&gt;&lt;li&gt;endereco&lt;/li&gt;&lt;li&gt;cnpj&lt;/li&gt;&lt;li&gt;descricao&lt;/li&gt;&lt;li&gt;data)cadastro&lt;/li&gt;&lt;li&gt;status&lt;/li&gt;&lt;/ul&gt;&lt;/div&gt;" style="text;html=1;align=left;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" parent="OMyhO2Jcg892DU5jWI1W-5" vertex="1">
+          <mxGeometry x="15" y="25" width="140" height="150" as="geometry" />
+        </mxCell>
+        <mxCell id="OMyhO2Jcg892DU5jWI1W-7" value="tbUsuarios" style="swimlane;whiteSpace=wrap;html=1;" parent="1" vertex="1">
+          <mxGeometry x="80" y="320" width="160" height="220" as="geometry" />
+        </mxCell>
+        <mxCell id="OMyhO2Jcg892DU5jWI1W-8" value="&lt;div style=&quot;&quot;&gt;&lt;ul&gt;&lt;li&gt;id&lt;/li&gt;&lt;li&gt;nome_completo&lt;/li&gt;&lt;li&gt;cpf&lt;/li&gt;&lt;li&gt;data_nascimento&lt;/li&gt;&lt;li&gt;endereco&lt;/li&gt;&lt;li&gt;bairro&lt;/li&gt;&lt;li&gt;cidade&lt;/li&gt;&lt;li&gt;uf&lt;/li&gt;&lt;li&gt;escolaridade&lt;/li&gt;&lt;li&gt;experiencia&lt;/li&gt;&lt;li&gt;data_cadastro&lt;/li&gt;&lt;li&gt;status&lt;/li&gt;&lt;/ul&gt;&lt;/div&gt;" style="text;html=1;align=left;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" parent="OMyhO2Jcg892DU5jWI1W-7" vertex="1">
+          <mxGeometry x="7.5" y="10" width="150" height="210" as="geometry" />
+        </mxCell>
+        <mxCell id="SYsFjz5i5U1I9MaQafsf-1" value="tbFaixaSalarial" style="swimlane;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="480" y="80" width="200" height="200" as="geometry" />
+        </mxCell>
+        <mxCell id="SYsFjz5i5U1I9MaQafsf-2" value="&lt;div style=&quot;&quot;&gt;&lt;ul&gt;&lt;li&gt;id&lt;/li&gt;&lt;li&gt;valor&lt;/li&gt;&lt;/ul&gt;&lt;div&gt;(até 1000, de 1000 a 2000&amp;nbsp;&lt;br&gt;de 2000 a 3000 e acima de&amp;nbsp;&lt;/div&gt;&lt;div&gt;3000&lt;/div&gt;&lt;/div&gt;" style="text;html=1;align=left;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" vertex="1" parent="SYsFjz5i5U1I9MaQafsf-1">
+          <mxGeometry x="15" y="45" width="170" height="110" as="geometry" />
+        </mxCell>
+        <mxCell id="SYsFjz5i5U1I9MaQafsf-3" value="tbEscolaridadeMinima" style="swimlane;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="480" y="320" width="200" height="200" as="geometry" />
+        </mxCell>
+        <mxCell id="SYsFjz5i5U1I9MaQafsf-4" value="&lt;div style=&quot;&quot;&gt;&lt;ul&gt;&lt;li&gt;id&lt;/li&gt;&lt;li&gt;escolaridade&lt;/li&gt;&lt;/ul&gt;&lt;div&gt;(ensino fundamental,&amp;nbsp;&lt;/div&gt;&lt;div&gt;ensino médio&lt;/div&gt;&lt;div&gt;tecnólogo, ensino superior,&amp;nbsp;&lt;/div&gt;&lt;div&gt;pós / mba/ mestrado&lt;/div&gt;&lt;div&gt;doutorado&lt;/div&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;&lt;/div&gt;" style="text;html=1;align=left;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" vertex="1" parent="SYsFjz5i5U1I9MaQafsf-3">
+          <mxGeometry x="15" y="25" width="170" height="150" as="geometry" />
+        </mxCell>
+        <mxCell id="SYsFjz5i5U1I9MaQafsf-5" value="tbRegime" style="swimlane;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="280" y="320" width="165" height="200" as="geometry" />
+        </mxCell>
+        <mxCell id="SYsFjz5i5U1I9MaQafsf-6" value="&lt;div style=&quot;&quot;&gt;&lt;ul&gt;&lt;li&gt;id&lt;/li&gt;&lt;li&gt;regime&lt;/li&gt;&lt;/ul&gt;&lt;div&gt;(presencial, home office&lt;/div&gt;&lt;div&gt;ou híbrido)&lt;/div&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;&lt;/div&gt;" style="text;html=1;align=left;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" vertex="1" parent="SYsFjz5i5U1I9MaQafsf-5">
+          <mxGeometry x="15" y="45" width="150" height="110" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>
