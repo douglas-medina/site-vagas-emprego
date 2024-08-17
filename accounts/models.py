@@ -51,7 +51,7 @@ class Candidatura(models.Model):
     ]
 
     vaga = models.ForeignKey(
-        Vagas, on_delete=models.CASCADE, related_name="candidaturas"
+        Vaga, on_delete=models.CASCADE, related_name="candidaturas"
     )
     candidato = models.ForeignKey(
         User, on_delete=models.CASCADE, related_name="candidaturas"
