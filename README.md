@@ -1,78 +1,92 @@
-# Sistema de Gestão de Vagas de Trabalho
+# Sistema de Gestão de Vagas
 
 ## Objetivo
 
-Desenvolver um sistema de gestão de vagas de trabalho utilizando o framework Django. O sistema permitirá a criação e gerenciamento de vagas de trabalho através do Django Admin e oferecerá uma landing page para que os usuários possam visualizar, descrever e se candidatar às vagas.
+Desenvolver um sistema de gestão de vagas de emprego utilizando **Python 3.11+** e  **Django 5+** . O sistema permitirá que empresas possam criar, editar e excluir vagas, enquanto candidatos poderão se candidatar a essas vagas através de uma interface simples. Além disso, relatórios e gráficos serão gerados para acompanhar as vagas e candidaturas.
 
 ## Funcionalidades
 
 ### Backend (Django Admin)
 
-- **Criação de Vagas de Trabalho**
-  - **Campos**:
-    - Empresa
-    - Salário
-    - Área
-    - Descrição da vaga
-  - **Interface**:
-    - O administrador poderá adicionar, editar e excluir vagas de trabalho.
+* **Cadastro de Vagas** : Empresas podem criar uma ou várias vagas com informações detalhadas.
+* **Campos das Vagas** :
+  * Nome da Vaga
+  * Faixa Salarial:
+    * Até 1.000
+    * De 1.000 a 2.000
+    * De 2.000 a 3.000
+    * Acima de 3.000
+  * Requisitos
+  * Escolaridade Mínima:
+    * Ensino Fundamental
+    * Ensino Médio
+    * Tecnólogo
+    * Ensino Superior
+    * Pós/MBA/Mestrado
+    * Doutorado
+* **Gerenciamento de Vagas** : O administrador pode editar e excluir vagas conforme necessário.
 
-### Frontend (Landing Page)
+### Frontend (Página de Candidatura)
 
-- **Cadastro de Vagas**
-  - Usuários poderão visualizar uma lista de vagas disponíveis.
-  - Cada vaga incluirá detalhes como salário, área e uma descrição completa.
-  - **Ações**:
-    - **Ver Vaga**: Exibir detalhes da vaga.
-    - **Aplicar**: Formulário para que o usuário se candidate à vaga (ex.: enviar um e-mail ou formulário de candidatura).
+* **Visualização de Vagas** : Candidatos podem visualizar todas as vagas disponíveis, com detalhes como faixa salarial, requisitos e escolaridade mínima.
+* **Formulário de Candidatura** : Candidatos podem se candidatar a uma vaga informando:
+  * Pretensão Salarial
+  * Experiência
+  * Última Escolaridade
+
+### Relatórios e Gráficos
+
+* Utilização de **Charts.js** (ou similar) para exibir gráficos que mostram:
+  1. Vagas criadas por mês.
+  2. Candidatos recebidos por mês.
+
+### Critérios de Avaliação de Candidatos
+
+* Pontuação baseada na compatibilidade do candidato com a vaga:
+  * Se dentro da faixa salarial, adiciona 1 ponto.
+  * Se dentro ou acima da escolaridade exigida, adiciona 1 ponto.
 
 ## Tecnologias Utilizadas
 
-- **Django**: Framework web para o backend, que facilitará a criação do sistema de gerenciamento e a administração das vagas de trabalho.
-- **Python**: Linguagem de programação utilizada no Django.
-- **HTML/CSS**: Para o desenvolvimento da landing page.
-- **JavaScript**: Para possíveis funcionalidades interativas na landing page.
-- **Banco de Dados**: O Django suporta vários bancos de dados, sendo o SQLite o padrão para desenvolvimento. Outros bancos de dados, como PostgreSQL ou MySQL, podem ser utilizados conforme necessário.
+* **Django** : Framework web para o backend.
+* **Python** : Linguagem de programação principal.
+* **HTML/CSS** : Para a interface da página de candidatura.
+* **JavaScript (Charts.js)** : Para gráficos e interatividade na página de relatórios.
+* **Banco de Dados** : SQLite para desenvolvimento. PostgreSQL ou MySQL para produção.
 
 ## Estrutura do Projeto
 
-1. **Modelo de Dados**
-   - **Vaga**: Modelo que incluirá campos para salário, área e descrição.
-
+1. **Modelos de Dados**
+   * **Vaga** : Modelo com os campos necessários para definir uma vaga.
+   * **Candidatura** : Modelo para registrar os candidatos e suas informações.
 2. **Administração**
-   - Configuração do Django Admin para gerenciar o modelo de vagas.
-
+   * Configuração do Django Admin para gerenciar as vagas e visualizar candidatos.
 3. **Landing Page**
-   - **Listagem de Vagas**: Página inicial que exibirá todas as vagas disponíveis.
-   - **Detalhes da Vaga**: Página para mostrar detalhes completos sobre uma vaga específica.
-   - **Formulário de Candidatura**: Página para que o usuário possa se candidatar à vaga.
+   * **Listagem de Vagas** : Página que exibe todas as vagas disponíveis.
+   * **Detalhes da Vaga** : Página que mostra informações detalhadas sobre uma vaga específica.
+   * **Formulário de Candidatura** : Página onde o candidato pode se inscrever para uma vaga.
+4. **Relatórios e Gráficos**
+   * Gráficos dinâmicos para análise de desempenho e recrutamento.
 
-## Passos a Serem Seguidos
+## Passos para Implementação
 
-- [X] **Configuração do Ambiente**
-  - Instalar Django e configurar o projeto inicial.
-
-- [ ] **Estruturação do Banco de Dados**
-  - Criar diagrama da estrutura do banco de dados.
-  - Basear no site vagas.com
-
-- [ ] **Desenvolvimento do Backend**
-  - Criar o modelo de dados para as vagas.
-  - Configurar o Django Admin para permitir a criação e gerenciamento das vagas.
-
-- [ ] **Desenvolvimento do Frontend**
-  - Criar a landing page para listar as vagas.
-  - Desenvolver as páginas de detalhes da vaga e formulário de candidatura.
-
-- [ ] **Testes**
-  - Testar a criação e gerenciamento de vagas no Django Admin.
-  - Testar a funcionalidade da landing page e do formulário de candidatura.
-
-- [ ] **Implantação**
-  - Preparar o projeto para produção.
-  - Deploy em um servidor de sua escolha.
+* [X] **Configuração do Ambiente** :
+  * Instalar Django e configurar o projeto inicial.
+* [ ] **Desenvolvimento do Backend** :
+  * Criar modelos de dados para vagas e candidaturas.
+  * Configurar o Django Admin para permitir o gerenciamento das vagas.
+* [ ] **Desenvolvimento do Frontend** :
+  * Criar a interface para listar e detalhar as vagas.
+  * Implementar o formulário de candidatura.
+* [ ] **Desenvolvimento de Relatórios** :
+  * Implementar gráficos com **Charts.js** para exibir relatórios mensais.
+* [ ] **Testes** :
+  * Testar a criação, edição e exclusão de vagas no Django Admin.
+  * Testar a usabilidade da página de candidatura.
+* [ ] **Implantação** :
+  * Configurar o projeto para ambiente de produção.
+  * Realizar deploy em uma plataforma como Railway, Heroku ou servidor próprio.
 
 ## Considerações Finais
 
-Este documento fornece uma visão geral do projeto e estabelece uma base sólida para o desenvolvimento do sistema de gestão de vagas de trabalho. Alterações e melhorias podem ser feitas conforme o projeto avança.
-
+Este projeto visa facilitar o processo de recrutamento e seleção, oferecendo um sistema completo de gerenciamento de vagas e acompanhamento de candidatos. Alterações e melhorias contínuas podem ser feitas conforme o projeto evolui.
