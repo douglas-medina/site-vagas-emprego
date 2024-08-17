@@ -72,7 +72,7 @@ Desenvolver um sistema de gestão de vagas de emprego utilizando **Python 3.11+*
 
 * [X] **Configuração do Ambiente** :
   * Instalar Django e configurar o projeto inicial.
-* [ ] **Desenvolvimento do Backend** :
+* [X] **Desenvolvimento do Backend** :
   * Criar modelos de dados para vagas e candidaturas.
   * Configurar o Django Admin para permitir o gerenciamento das vagas.
 * [ ] **Desenvolvimento do Frontend** :
