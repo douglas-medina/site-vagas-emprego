@@ -1,0 +1,16 @@
+body {
+    padding-top: 56px;
+    /* Espaço para o cabeçalho fixo */
+}
+
+.vaga-item {
+    margin-bottom: 20px;
+}
+
+.vaga-item h3 {
+    margin: 0;
+}
+
+.vaga-item p {
+    margin: 5px 0;
+}

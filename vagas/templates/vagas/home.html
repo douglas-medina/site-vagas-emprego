@@ -3,11 +3,13 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Detalhes da Vaga - Site de Vagas</title>
+    <title>Home - Site de Vagas</title>
+    {% load static %}
     <link href="https://stackpath.bootstrapcdn.com/bootstrap/5.1.3/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="{% static 'styles.css' %}">
 </head>
 <body>
+    <!-- Navbar -->
     <header class="navbar navbar-expand-lg navbar-light bg-light fixed-top">
         <div class="container">
             <a class="navbar-brand" href="#">Site de Vagas</a>
@@ -17,7 +19,7 @@
             <div class="collapse navbar-collapse" id="navbarNav">
                 <ul class="navbar-nav">
                     <li class="nav-item">
-                        <a class="nav-link" href="{% url 'home' %}">Home</a>
+                        <a class="nav-link active" href="{% url 'home' %}">Home</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="{% url 'nova_vaga' %}">Registrar Vaga</a>
@@ -27,19 +29,31 @@
         </div>
     </header>
 
-    <main class="container mt-5">
+    <!-- Main Content -->
+    <main class="container mt-5 pt-5">
         <section>
-            <h2>{{ vaga.titulo }}</h2>
-            <p><strong>Empresa:</strong> {{ vaga.empresa.nome }}</p>
-            <p><strong>Faixa Salarial:</strong> {{ vaga.faixa_salarial }}</p>
-            <p><strong>Requisitos:</strong> {{ vaga.requisitos }}</p>
-            <p><strong>Escolaridade Mínima:</strong> {{ vaga.escolaridade_minima }}</p>
-            <p><strong>Data de Criação:</strong> {{ vaga.data_criacao }}</p>
-            <a href="{% url 'candidatar' vaga.id %}" class="btn btn-primary">Candidatar-se</a>
+            <h2 class="mb-4">Vagas Disponíveis</h2>
+            <div class="row">
+                {% for vaga in vagas %}
+                    <div class="col-md-4 vaga-item mb-4">
+                        <div class="card h-100">
+                            <div class="card-body">
+                                <h3 class="card-title">{{ vaga.titulo }}</h3>
+                                <p><strong>Empresa:</strong> {{ vaga.empresa.nome }}</p>
+                                <p><strong>Faixa Salarial:</strong> {{ vaga.faixa_salarial }}</p>
+                                <p><strong>Requisitos:</strong> {{ vaga.requisitos }}</p>
+                                <a href="{% url 'vaga_detalhes' vaga.id %}" class="btn btn-primary">Candidatar-se</a>
+                            </div>
+                        </div>
+                    </div>
+                {% empty %}
+                    <p class="col-12">Não há vagas disponíveis no momento.</p>
+                {% endfor %}
+            </div>
         </section>
     </main>
 
-    <footer class="bg-light text-center py-3">
+    <footer class="bg-light text-center py-3 mt-5">
         <p>&copy; 2024 Site de Vagas</p>
     </footer>
 
