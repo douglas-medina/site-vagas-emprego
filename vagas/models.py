@@ -4,6 +4,14 @@ from django.contrib.auth.models import User
 # Create your models here.
 
 
+class Empresa(models.Model):
+    nome = models.CharField(max_length=255, unique=True)
+    descricao = models.TextField(blank=True, null=True)
+
+    def __str__(self):
+        return self.nome
+
+
 class Vaga(models.Model):
     FAIXAS_SALARIAIS = [
         ("0-1000", "Até 1.000"),
@@ -21,7 +29,7 @@ class Vaga(models.Model):
         ("doutorado", "Doutorado"),
     ]
 
-    empresa = models.ForeignKey(User, on_delete=models.CASCADE, related_name="vagas")
+    empresa = models.ForeignKey(Empresa, on_delete=models.CASCADE, related_name="vagas")
     titulo = models.CharField(max_length=200)
     faixa_salarial = models.CharField(max_length=10, choices=FAIXAS_SALARIAIS)
     requisitos = models.TextField()
