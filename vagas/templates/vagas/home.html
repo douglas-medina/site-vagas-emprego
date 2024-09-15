@@ -1,118 +1,114 @@
 <!DOCTYPE html>
 <html lang="pt-br">
-
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Vagas.dev</title>
-    <link rel="stylesheet" href="/vagas/static/vagas/js/bootstrap.min.css">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.4/font/bootstrap-icons.css">
-    <link rel="stylesheet" href="/vagas/static/vagas/styles.css">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Pacifico&family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Vagas.dev</title>
+	<link rel="stylesheet" href="/vagas/static/vagas/js/bootstrap.min.css">
+	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.4/font/bootstrap-icons.css">
+	<link rel="stylesheet" href="/vagas/static/vagas/styles.css">
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link href="https://fonts.googleapis.com/css2?family=Pacifico&family=Roboto:wght@400;700&display=swap" rel="stylesheet">
 </head>
-
 <body>
-    <header class="navbar navbar-expand-lg sticky-top p-4" id="cabecalho">
-        <div class="container">
-            <h1 class="navbar-brand m-0 section-title">Vagas.dev</h1>
-            <button class="navbar-toggler" data-bs-toggle="collapse" data-bs-target="#menu-navegacao">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <nav class="navbar-collapse collapse justify-content-end" id="menu-navegacao">
-                <ul class="nav nav-pills d-block d-md-flex">
-                    <li class="nav-item fw-bold"><a href="#sobre-o-restaurante" class="nav-link">
-                            <i class="bi bi-house-door me-2"></i>Home</a></li>
-                    <li class="nav-item fw-bold"><a href="#eventos" class="nav-link">
-                            <i class="bi bi-briefcase-fill me-2"></i>Vagas</a></li>
-                    <li class="nav-item fw-bold"><a href="#cardapio" class="nav-link">
-                            <i class="bi bi-search me-2"></i>Pesquisar</a></li>
-                    <li class="nav-item fw-bold"><a href="#contato" class="nav-link">
-                            <i class="bi bi-person-fill me-2"></i>Login</a></li>
-                </ul>
-            </nav>
-            </div>
-            </header>
-            
-            <div data-bs-spy="scroll" data-bs-target="cabecalho" data-bs-smooth-scroll="true">
-                <section id="sobre-o-restaurante">
-                    <div class="carousel slide" data-bs-ride="carousel" id="carousel">
-                        <div class="carousel-inner">
-                            <div class="carousel-item active" data-bs-interval="3000"><img src="https://placehold.co/1920x720"
-                                    alt="Placeholder de imagem" class="vw-100"></div>
-                            <div class="carousel-item" data-bs-interval="3000"><img src="https://placehold.co/1920x720"
-                                    alt="Placeholder de imagem" class="vw-100"></div>
-                            <div class="carousel-item" data-bs-interval="3000"><img src="https://placehold.co/1920x720"
-                                    alt="Placeholder de imagem" class="vw-100"></div>
-                        </div>
-                        <!--BOTOES LATERAIS DO SLIDE-->
-                        <button class="carousel-control-prev" type="button" data-bs-target="#carousel" data-bs-slide="prev">
-                            <span class="carousel-control-prev-icon"></span>
-                        </button>
-                        <button class="carousel-control-next" type="button" data-bs-target="#carousel" data-bs-slide="next">
-                            <span class="carousel-control-next-icon"></span>
-                        </button>
-                        <!--INDICADORES DO SLIDE-->
-                        <div class="carousel-indicators">
-                            <button type="button" data-bs-target="#carousel" class="active" data-bs-slide-to="0"></button>
-                            <button type="button" data-bs-target="#carousel" data-bs-slide-to="1"></button>
-                            <button type="button" data-bs-target="#carousel" data-bs-slide-to="2"></button>
-                        </div>
-                    </div>
-                    <div class="pt-5 pb-5">
-                        <div class="container">
-                            <div class="row">
-                                <div class="col-md-5"><img class="d-block w-100 rounded" src="https://placehold.co/720x480"
-                                        alt="Placeholder de imagem"></div>
-                                <div class="col-md-7 mt-3 mt-md-0">
-                                    <h2 class="section-title"><i class="bi bi-currency-dollar"></i> Plataforma gratuita</h2>
-                                        <p>{% lorem 1 b random %}</p>
-                                    <h2 class="section-title"><i class="bi bi-laptop"></i> Vagas de emprego para todas stacks</h2>
-                                        <p>{% lorem 1 b random %}</p>
-                                    <h2 class="section-title"><i class="bi bi-globe-americas"></i> Empresas de todo o mundo estão contratando</h2>
-                                        <p>{% lorem 1 b random %}</p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    </section>
-
-
-    <!-- Main Content -->
-    <main class="container mt-5 pt-5">
-        <section>
-            <h2 class="mb-4">Vagas Disponíveis</h2>
-            <div class="row">
-                {% for vaga in vagas %}
-                <div class="col-md-4 vaga-item mb-4">
-                    <div class="card h-100">
-                        <div class="card-body">
-                            <h3 class="card-title">{{ vaga.titulo }}</h3>
-                            <p><strong>Empresa:</strong> {{ vaga.empresa.nome }}</p>
-                            <p><strong>Faixa Salarial:</strong> {{ vaga.faixa_salarial }}</p>
-                            <p><strong>Requisitos:</strong> {{ vaga.requisitos }}</p>
-                            <a href="{% url 'vaga_detalhes' vaga.id %}" class="btn btn-primary">Candidatar-se</a>
-                        </div>
-                    </div>
-                </div>
-                {% empty %}
-                <p class="col-12">Não há vagas disponíveis no momento.</p>
-                {% endfor %}
-            </div>
-        </section>
-    </main>
-
-    <footer class="bg-light text-center py-3 mt-5">
-        <p>&copy; 2024 Vagas.dev</p>
-    </footer>
-
-    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"
-        integrity="sha384-oBqDVmMz4fnFO9nyzHnjaylaYdUNo/7V3G5xSaIKo9kuh4Y8z0MMDPpZK7P4B3M" crossorigin="anonymous"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/5.1.3/js/bootstrap.min.js"
-        integrity="sha384-dUowJq8V5g7NQFffJp5hDxaI/2gFzC6eiJ7aUpbq6yqaAX5W39ThkM8qV4sXeb37"
-        crossorigin="anonymous"></script>
-</body>
-
-</html>
+	<header class="navbar navbar-expand-lg sticky-top p-4" id="cabecalho">
+		<div class="container">
+			<h1 class="navbar-brand m-0 section-title">Vagas.dev</h1>
+			<button class="navbar-toggler" data-bs-toggle="collapse" data-bs-target="#menu-navegacao">
+				<span class="navbar-toggler-icon"></span>
+			</button>
+			<nav class="navbar-collapse collapse justify-content-end" id="menu-navegacao">
+				<ul class="nav nav-pills d-block d-md-flex">
+					<li class="nav-item fw-bold"><a href="#sobre-o-restaurante" class="nav-link">
+						<i class="bi bi-house-door me-2"></i>Home</a>
+					</li>
+					<li class="nav-item fw-bold"><a href="#eventos" class="nav-link">
+						<i class="bi bi-briefcase-fill me-2"></i>Vagas</a>
+					</li>
+					<li class="nav-item fw-bold"><a href="#cardapio" class="nav-link">
+						<i class="bi bi-search me-2"></i>Pesquisar</a>
+					</li>
+					<li class="nav-item fw-bold"><a href="#contato" class="nav-link">
+						<i class="bi bi-person-fill me-2"></i>Login</a>
+					</li>
+				</ul>
+			</nav>
+		</div>
+	</header>
+	<div data-bs-spy="scroll" data-bs-target="cabecalho" data-bs-smooth-scroll="true">
+		<section id="sobre-o-restaurante">
+			<div class="carousel slide" data-bs-ride="carousel" id="carousel">
+				<div class="carousel-inner">
+					<div class="carousel-item active" data-bs-interval="3000"><img src="https://placehold.co/1920x720"
+						alt="Placeholder de imagem" class="vw-100"></div>
+						<div class="carousel-item" data-bs-interval="3000"><img src="https://placehold.co/1920x720"
+							alt="Placeholder de imagem" class="vw-100"></div>
+							<div class="carousel-item" data-bs-interval="3000"><img src="https://placehold.co/1920x720"
+								alt="Placeholder de imagem" class="vw-100"></div>
+							</div>
+							<!--BOTOES LATERAIS DO SLIDE-->
+							<button class="carousel-control-prev" type="button" data-bs-target="#carousel" data-bs-slide="prev">
+								<span class="carousel-control-prev-icon"></span>
+							</button>
+							<button class="carousel-control-next" type="button" data-bs-target="#carousel" data-bs-slide="next">
+								<span class="carousel-control-next-icon"></span>
+							</button>
+							<!--INDICADORES DO SLIDE-->
+							<div class="carousel-indicators">
+								<button type="button" data-bs-target="#carousel" class="active" data-bs-slide-to="0"></button>
+								<button type="button" data-bs-target="#carousel" data-bs-slide-to="1"></button>
+								<button type="button" data-bs-target="#carousel" data-bs-slide-to="2"></button>
+							</div>
+						</div>
+						<div class="pt-5 pb-5">
+							<div class="container">
+								<div class="row">
+									<div class="col-md-5"><img class="d-block w-100 rounded" src="https://placehold.co/720x480"
+										alt="Placeholder de imagem"></div>
+										<div class="col-md-7 mt-3 mt-md-0">
+											<h2 class="section-title"><i class="bi bi-currency-dollar"></i> Plataforma gratuita</h2>
+											<p>{% lorem 1 b random %}</p>
+											<h2 class="section-title"><i class="bi bi-laptop"></i> Vagas de emprego para todas stacks</h2>
+											<p>{% lorem 1 b random %}</p>
+											<h2 class="section-title"><i class="bi bi-globe-americas"></i> Empresas de todo o mundo estão contratando</h2>
+											<p>{% lorem 1 b random %}</p>
+										</div>
+									</div>
+								</div>
+							</div>
+						</section>
+						<!-- Main Content -->
+						<main class="container mt-5 pt-5">
+							<section>
+								<h2 class="mb-4">Vagas Disponíveis</h2>
+								<div class="row">
+									{% for vaga in vagas %}
+									<div class="col-md-4 vaga-item mb-4">
+										<div class="card h-100">
+											<div class="card-body">
+												<h3 class="card-title">{{ vaga.titulo }}</h3>
+												<p><strong>Empresa:</strong> {{ vaga.empresa.nome }}</p>
+												<p><strong>Faixa Salarial:</strong> {{ vaga.faixa_salarial }}</p>
+												<p><strong>Requisitos:</strong> {{ vaga.requisitos }}</p>
+												<a href="{% url 'vaga_detalhes' vaga.id %}" class="btn btn-primary">Candidatar-se</a>
+											</div>
+										</div>
+									</div>
+									{% empty %}
+									<p class="col-12">Não há vagas disponíveis no momento.</p>
+									{% endfor %}
+								</div>
+							</section>
+						</main>
+						<footer class="bg-light text-center py-3 mt-5">
+							<p>&copy; 2024 Vagas.dev</p>
+						</footer>
+						<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"
+						integrity="sha384-oBqDVmMz4fnFO9nyzHnjaylaYdUNo/7V3G5xSaIKo9kuh4Y8z0MMDPpZK7P4B3M" crossorigin="anonymous"></script>
+						<script src="https://stackpath.bootstrapcdn.com/bootstrap/5.1.3/js/bootstrap.min.js"
+						integrity="sha384-dUowJq8V5g7NQFffJp5hDxaI/2gFzC6eiJ7aUpbq6yqaAX5W39ThkM8qV4sXeb37"
+						crossorigin="anonymous"></script>
+					</body>
+					</html>
