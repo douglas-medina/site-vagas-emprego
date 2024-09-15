@@ -14,3 +14,25 @@ body {
 .vaga-item p {
     margin: 5px 0;
 }
+/* Estilizando os cards das vagas */
+.vaga-item .card {
+    border-radius: 15px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+}
+
+.vaga-item .card:hover {
+    transform: scale(1.05);
+}
+
+/* Estilizando o botão de candidatura */
+.btn-primary {
+    background-color: #6a0dad;
+    border-color: #6a0dad;
+    border-radius: 50px;
+}
+
+.btn-primary:hover {
+    background-color: #5b0cab;
+    border-color: #5b0cab;
+}

@@ -1,0 +1,27 @@
+body {
+    font-family: 'Roboto', sans-serif;
+}
+
+.navbar {
+    background-color: purple;
+}
+
+#cabecalho .nav .nav-link.active {
+    background-color: #fff;
+    color: purple;
+}
+
+#cabecalho .nav .nav-link,
+.navbar-brand,
+.navbar-brand:hover,
+.nav-cardapio .nav-link.active:hover {
+    color: #fff;
+}
+
+.navbar-toggler {
+    background-color: red;
+}
+
+#cabecalho ul li {
+    display: inline;
+}
